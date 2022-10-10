@@ -20,6 +20,8 @@ module.exports = {
 
     },
 
+    runtimeCompiler: true,
+
     css: {
         //是否为 CSS 开启 source map。设置为 true 之后可能会影响构建的性能
         sourceMap: false,
