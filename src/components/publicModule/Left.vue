@@ -1,0 +1,1268 @@
+<style lang='less' type="text/less">
+    /*整体样式*/
+    #menuContent {
+        width: 87px;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .menuList {
+            background-color: rgba(255, 255, 255, 0);
+
+            i:nth-child(1) {
+                content: "";
+                width: 26px;
+                height: 26px;
+                margin: 3px auto 0;
+                display: block;
+                //background-image: url("../../assets/icon_nav.png");
+            }
+
+            /*修改框架样式*/
+            .el-submenu__title p {
+                color: rgba(255, 255, 255, 0.5);
+                height: 20px;
+                line-height: 20px;
+                margin-top: 4px;
+                // margin-left: -6px;
+                width: 100%;
+                text-align: center;
+                font: 14px "Microsoft YaHei";
+            }
+
+            .el-submenu__title .mg-four {
+                // margin-left: -14px;
+            }
+
+            .el-submenu__title:hover {
+                background-color: #48AEDF;
+            }
+            /*修改框架样式结束*/
+
+            /*首页背景图定位*/
+            .icon-sjgl {
+                background-position: -30px -60px;
+            }
+
+            .icon-yhgl {
+                background-position: -170px -143px;
+            }
+
+            .icon-ssjy {
+                background-position: -502px -95px;
+            }
+
+            .icon-yet {
+                background-position: -30px 0;
+            }
+
+            .icon-jyt {
+                background-position: -30px -29px;
+            }
+
+            .icon-dbt {
+                background-position: -170px -180px;
+            }
+
+            .icon-zft {
+                background-position: -168px -220px;
+            }
+
+            .icon-gjt {
+                background-position: -103px -116px;
+            }
+
+            .icon-zjxb {
+                background-position: -92px -254px;
+            }
+
+            .icon-skt {
+                background-position: -152px -254px;
+            }
+
+            .icon-electb {
+                background-position: -321px -194px;
+            }
+
+            .icon-gyl {
+                background-position: -212px -254px;
+            }
+
+            .icon-ywfk {
+                background-position: -31px -219px;
+            }
+
+            .icon-zht {
+                background-position: -249px -193px;
+            }
+
+            .icon-splgl {
+                background-position: -322px -222px;
+            }
+
+            .icon-zjys {
+                background-position: -32px 0px;
+            }
+
+            .icon-sppt {
+                background-position: -102px -86px;
+            }
+
+            .icon-bb {
+                background-position: -30px -55px;
+            }
+
+            .icon-oa {
+                background-position: -506px -190px;
+            }
+            .icon-fk {
+                background-position: -249px -220px;
+            }
+
+            .icon-gzrl {
+                background-position: -32px -252px;
+            }
+
+            .icon-tpgl {
+                background-position: -272px -254px;
+            }
+
+            .icon-xtsz {
+                background-position: -31px -85px;
+            }
+
+            .icon-plfk {
+                background-position: -512px -252px;
+            }
+
+            .icon-plsk {
+                background-position: -452px -252px;
+            }
+
+            .icon-gmfk{
+                background-position: -272px -284px;
+            }
+
+            .icon-dzt {
+                background-position: -333px -254px;
+            }
+
+            .icon-ymyt{
+                background-position: -470px -161px;
+            }
+
+            .icon-gmsk{
+                background-position: -212px -284px;
+            }
+            .icon-pzgl{
+                background-position: -331px -284px;
+            }
+            .icon-fcyj{
+                background-position: -32px -285px;
+            }
+            /*首页背景图定位结束*/
+        }
+
+        /*标签页样式设置*/
+        .noBgc {
+            .icon-sjgl {
+                background-position: 0 -60px;
+            }
+            .icon-yhgl {
+                background-position: -138px -143px;
+            }
+            .icon-ssjy {
+                background-position: -470px -95px;
+            }
+            .icon-yet {
+                background-position: 0px 0;
+            }
+            .icon-jyt {
+                background-position: 0 -29px;
+            }
+            .icon-dbt {
+                background-position: -138px -180px;
+            }
+            .icon-zft {
+                background-position: -137px -220px;
+            }
+            .icon-gjt {
+                background-position: -69px -116px;
+            }
+            .icon-zjxb {
+                background-position: -62px -254px;
+            }
+            .icon-skt {
+                background-position: -122px -254px;
+            }
+            .icon-electb {
+                background-position: -287px -194px;
+            }
+            .icon-gyl {
+                background-position: -182px -254px;
+            }
+            .icon-ywfk {
+                background-position: 0px -219px;
+            }
+            .icon-zht {
+                background-position: -213px -193px;
+            }
+            .icon-splgl {
+                background-position: -287px -222px;
+            }
+            .icon-zjys {
+                background-position: 0px 0px;
+            }
+            .icon-sppt {
+                background-position: -68px -86px;
+            }
+            .icon-bb {
+                background-position: 0 -55px;
+            }
+            .icon-oa {
+                background-position: -506px -160px;
+            }
+            .icon-fk {
+                background-position: -212px -220px;
+            }
+            .icon-gzrl {
+                background-position: -1px -252px;
+            }
+            .icon-tpgl {
+                background-position: -242px -254px;
+            }
+            .icon-xtsz {
+                background-position: 0px -85px;
+            }
+            .icon-plfk {
+                background-position: -482px -252px;
+            }
+            .icon-plsk {
+                background-position: -422px -252px;
+            }
+            .icon-gmfk{
+                background-position: -242px -284px;
+            }
+            .icon-dzt {
+                background-position: -302px -254px;
+            }
+            .icon-ymyt{
+                background-position: -434px -161px;
+            }
+            .icon-gmsk{
+                background-position: -182px -284px;
+            }
+            .icon-pzgl{
+                background-position: -301px -284px;
+            }
+            .icon-fcyj{
+                background-position: -2px -285px;
+            }
+            .el-submenu__title p {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            .el-submenu__title:hover .icon-sjgl {
+                background-position: -30px -60px;
+            }
+
+            .el-submenu__title:hover .icon-yhgl {
+                background-position: -170px -143px;
+            }
+            .el-submenu__title:hover .icon-ssjy {
+                background-position: -502px -95px;
+            }
+
+            .el-submenu__title:hover .icon-yet {
+                background-position: -30px 0;
+            }
+
+            .el-submenu__title:hover .icon-jyt {
+                background-position: -30px -29px;
+            }
+
+            .el-submenu__title:hover .icon-dbt {
+                background-position: -170px -180px;
+            }
+
+            .el-submenu__title:hover .icon-zft {
+                background-position: -168px -220px;
+            }
+
+            .el-submenu__title:hover .icon-gjt {
+                background-position: -103px -116px;
+            }
+
+            .el-submenu__title:hover .icon-zjxb {
+                background-position: -92px -254px;
+            }
+
+            .el-submenu__title:hover .icon-skt {
+                background-position: -152px -254px;
+            }
+            .el-submenu__title:hover .icon-electb {
+                background-position: -321px -194px;
+            }
+            .el-submenu__title:hover .icon-gyl {
+                background-position: -212px -254px;
+            }
+
+            .el-submenu__title:hover .icon-ywfk {
+                background-position: -31px -219px;
+            }
+
+            .el-submenu__title:hover .icon-zht {
+                background-position: -249px -193px;
+            }
+
+            .el-submenu__title:hover .icon-splgl {
+                background-position: -322px -222px;
+            }
+
+            .el-submenu__title:hover .icon-zjys {
+                background-position: -32px 0px;
+            }
+
+            .el-submenu__title:hover .icon-sppt {
+                background-position: -102px -86px;
+            }
+
+            .el-submenu__title:hover .icon-bb {
+                background-position: -30px -55px;
+            }
+
+            .el-submenu__title:hover .icon-oa {
+                background-position: -506px -190px;
+            }
+            .el-submenu__title:hover .icon-fk {
+                background-position: -249px -220px;
+            }
+
+            .el-submenu__title:hover .icon-gzrl {
+                background-position: -32px -252px;
+            }
+
+            .el-submenu__title:hover .icon-tpgl {
+                background-position: -272px -254px;
+            }
+
+            .el-submenu__title:hover .icon-xtsz {
+                background-position: -31px -85px;
+            }
+
+            .el-submenu__title:hover .icon-plfk {
+                background-position: -512px -252px;
+            }
+
+            .el-submenu__title:hover .icon-plsk {
+                background-position: -452px -252px;
+            }
+
+            .el-submenu__title:hover .icon-gmfk{
+                background-position: -272px -284px;
+            }
+
+            .el-submenu__title:hover .icon-dzt {
+                background-position: -333px -254px;
+            }
+
+            .el-submenu__title:hover .icon-ymyt{
+                background-position: -470px -161px;
+            }
+
+            .el-submenu__title:hover .icon-gmsk{
+                background-position: -212px -284px;
+            }
+            .el-submenu__title:hover .icon-pzgl{
+                background-position: -331px -284px;
+            }
+            .el-submenu__title:hover .icon-fcyj{
+                background-position: -32px -285px;
+            }
+            .el-submenu__title:hover p {
+                color: #fff;
+            }
+        }
+
+        /*修改框架样式*/
+        .el-menu-vertical-demo:not(.el-menu--collapse) {
+            width: 100%;
+            min-height: 400px;
+        }
+
+        .el-menu-vertical-demo {
+            width: 100%;
+        }
+
+        .el-submenu__title {
+            height: 70px;
+            padding-left: 0px !important;
+            padding-right: 0px;
+            padding-top: 12px;
+
+        }
+    }
+
+    /*框架样式修改*/
+    .el-menu--vertical .el-menu {
+        margin: 0;
+        background-color: #48AEDF;
+        min-width: 150px;
+        width: 170px;
+    }
+
+    .el-menu--vertical .el-menu .el-menu-item-group__title {
+        padding: 0;
+    }
+
+    .el-menu--vertical .el-menu ul li {
+        height: 30px;
+        line-height: 30px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .el-menu--vertical .el-menu ul li:hover {
+        background-color: rgba(23, 144, 201, 1);
+        color: #fff;
+    }
+
+    /*框架样式修改结束*/
+</style>
+
+<template>
+    <div id="menuContent">
+        <el-menu default-active="1-12-1" :class="['el-menu-vertical-demo', 'menuList', {'noBgc':showBgc}]"
+                 :collapse="isCollapse" :router="true">
+            <el-submenu index="1" v-if="menuList.DMMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-sjgl"></i>
+                    <p class="mg-four">数据管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/data-manage/basic-data" v-if="menuList.BasicDataMgt">基础数据维护</el-menu-item>
+<!--                    <el-menu-item index="/data-manage/settle-account" v-if="menuList.SettAccMgt">结算账户设置</el-menu-item>
+                    <el-menu-item index="/data-manage/merch-set" v-if="menuList.MerchMgt">商户号设置</el-menu-item>
+                    <el-menu-item index="/data-manage/channel-set" v-if="menuList.ChannelMgt">渠道设置</el-menu-item>
+                    <el-menu-item index="/data-manage/router-set" v-if="menuList.RouteMgt">路由设置</el-menu-item>
+                    <el-menu-item index="/data-manage/bank-pay" v-if="menuList.PayBank">工行直连扣款</el-menu-item>
+                    <el-menu-item index="/data-manage/call-back" v-if="menuList.PayBank">数据回调中心</el-menu-item>
+                    <el-menu-item index="/data-manage/citic-white" v-if="menuList.CiticWhite">中信银行白名单导入</el-menu-item>
+                   <el-menu-item index="/data-manage/bcm-white" v-if="menuList.BcmWhite">交通银行白名单导入</el-menu-item>-->
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="2" v-if="menuList.UMMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-yhgl"></i>
+                    <p class="mg-four">用户管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/user-manage/user-maintain" v-if="menuList.UsrMgt">用户维护</el-menu-item>
+                    <el-menu-item index="/user-manage/user-group" v-if="menuList.UsrGpMgt">用户组设置</el-menu-item>
+                    <el-menu-item index="/user-manage/user-menu" v-if="menuList.UsrMenuMgt">用户菜单设置</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="3" v-if="menuList.RTPRMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-ssjy"></i>
+                    <p class="mg-four">实时交易</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/realtime-trade/personal-insurance" v-if="menuList.RTGXPayMgt">个险核心实时代付
+                    </el-menu-item>
+                    <el-menu-item index="/realtime-trade/group-insurance" v-if="menuList.RTTXPayMgt">团险核心实时代付
+                    </el-menu-item>
+                    <el-menu-item index="/realtime-trade/QRcode" v-if="menuList.RTYDQrCodeMgt">移动展业二维码</el-menu-item>
+                    <el-menu-item index="/realtime-trade/move-withhold" v-if="menuList.RTYDRecvMgt">移动展业实时代扣
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="4" v-if="menuList.ACCMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-zht"></i>
+                    <p>账户管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/account/open-account-matter" v-if="menuList.AccOpenIntAppl">开户事项申请
+                    </el-menu-item>
+                    <el-menu-item index="/account/open-account-message" v-if="menuList.AccOpenComAppl">开户信息补录申请
+                    </el-menu-item>
+                    <el-menu-item index="/account/open-account-confirm" v-if="menuList.AccOpenConfirm">开户确认
+                    </el-menu-item>
+                    <el-menu-item index="/account/account-alteration" v-if="menuList.AccChgAppl">账户变更申请</el-menu-item>
+                    <el-menu-item index="/account/account-alteration-complete" v-if="menuList.AccChgComAppl">账户变更补录申请</el-menu-item>
+                    <el-menu-item index="/account/account-message" v-if="menuList.AccMtc">账户信息维护</el-menu-item>
+                    <el-menu-item index="/account/account-unfreeze" v-if="menuList.AccFreezeAppl">账户解冻申请</el-menu-item>
+                    <el-menu-item index="/account/account-freeze" v-if="menuList.AccDefreezeAppl">账户冻结申请</el-menu-item>
+                    <el-menu-item index="/account/close-account-matter" v-if="menuList.AccCloseIntAppl">销户事项申请
+                    </el-menu-item>
+                    <el-menu-item index="/account/close-account-message" v-if="menuList.AccCloseComAppl">销户信息补录申请
+                    </el-menu-item>
+                    <el-menu-item index="/account/close-account-confirm" v-if="menuList.AccCloseConfirm">销户确认
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="5" v-if="menuList.WFMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-splgl"></i>
+                    <p>审批流管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/workflow/workflow-definition" v-if="menuList.WFDefine">审批流程定义</el-menu-item>
+                    <!-- <el-menu-item index="/workflow/workflow-trace" v-if="menuList.WFTrace">业务跟踪管理</el-menu-item> -->
+                    <el-menu-item index="/workflow/workflow-configure" v-if="menuList.WFLinK">业务配置审批流程</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+<!--          <el-submenu index="6" v-if="menuList.CRMGT">-->
+<!--            <template slot="title" height="200px">-->
+<!--              <i class="icon-splgl"></i>-->
+<!--              <p>佣金费率维护</p>-->
+<!--            </template>-->
+<!--            <el-menu-item-group>-->
+<!--              <el-menu-item index="/commissionRate/commissionRate-maintain" v-if="menuList.CRMaintain">佣金费率维护</el-menu-item>-->
+<!--            </el-menu-item-group>-->
+<!--          </el-submenu>-->
+                    <el-submenu index="5" v-if="menuList.BRWNMGT">
+                      <template slot="title" height="200px">
+                        <i class="icon-splgl"></i>
+                        <p>流水导入</p>
+                      </template>
+                      <el-menu-item-group>
+                        <el-menu-item index="/businessRunningWater/businessRunningWater-import" v-if="menuList.BRWNImport">代收京东流水导入</el-menu-item>
+                      </el-menu-item-group>
+                    </el-submenu>
+            <el-submenu index="6" v-if="menuList.WFPLAT">
+                <template slot="title" height="200px">
+                    <i class="icon-sppt"></i>
+                    <p class="mg-four">审批平台</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/examine-approve/my-examine-approve" v-if="menuList.MyWFPLAT">我的审批平台
+                    </el-menu-item>
+                    <el-menu-item index="/examine-approve/permission-transfer" v-if="menuList.ApproveTransfer">权限转移
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="7" v-if="menuList.YET">
+                <template slot="title" height="200px">
+                    <i class="icon-yet"></i>
+                    <p>余额管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/balance/today-detail" v-if="menuList.CurBal">当日余额明细</el-menu-item>
+                    <el-menu-item index="/balance/today-all" v-if="menuList.CulBalSummary">当日余额汇总</el-menu-item>
+                    <el-menu-item index="/balance/today-fluctuate" v-if="menuList.CulBalWave">当日余额波动</el-menu-item>
+                    <el-menu-item index="/balance/history-detail" v-if="menuList.HisBal">历史余额明细</el-menu-item>
+                    <el-menu-item index="/balance/history-all" v-if="menuList.HisBalSummary">历史余额汇总</el-menu-item>
+                    <el-menu-item index="/balance/history-fluctuate" v-if="menuList.HisBalWave">历史余额波动</el-menu-item>
+                    <el-menu-item index="/balance/history-data" v-if="menuList.BalImport">余额数据导入</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="8" v-if="menuList.JYT">
+                <template slot="title" height="200px">
+                    <i class="icon-jyt"></i>
+                    <p>交易管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/trade-links/today-detail" v-if="menuList.CurTrans">当日交易明细</el-menu-item>
+                    <el-menu-item index="/trade-links/today-all" v-if="menuList.CurTransSummary">当日交易汇总</el-menu-item>
+                    <el-menu-item index="/trade-links/history-detail" v-if="menuList.HisTrans">历史交易明细</el-menu-item>
+                    <el-menu-item index="/trade-links/history-all" v-if="menuList.HisTransSummary">历史交易汇总</el-menu-item>
+                    <el-menu-item index="/trade-links/history-fluctuate" v-if="menuList.HisTransWave">历史交易波动
+                    </el-menu-item>
+                    <el-menu-item index="/trade-links/history-data" v-if="menuList.TransImport">交易数据导入</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="9" v-if="menuList.DBT">
+                <template slot="title" height="200px">
+                    <i class="icon-dbt"></i>
+                    <p>调拨管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/allot/make-bill" v-if="menuList.DbtMkBill">内部调拨-制单</el-menu-item>
+                    <el-menu-item index="/allot/payment" v-if="menuList.DbtPayBill">内部调拨-支付</el-menu-item>
+                    <el-menu-item index="/allot/look-over" v-if="menuList.DbtViewBill">内部调拨-查看</el-menu-item>
+                    <el-menu-item index="/allot/lot-make-bill" v-if="menuList.DbtBatchBill">批量调拨-制单</el-menu-item>
+                    <el-menu-item index="/allot/lot-payment" v-if="menuList.DbtBatchPay">批量调拨-支付</el-menu-item>
+                    <el-menu-item index="/allot/lot-look-over" v-if="menuList.DbtBatchView">批量调拨-查看</el-menu-item>
+                    <el-menu-item index="/allot/allot-deal-check?bizType=8" v-if="menuList.DbtCheck">交易核对</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="10" v-if="menuList.WDATESET || menuList.WCALSET">
+                <template slot="title" height="200px">
+                    <i class="icon-gzrl"></i>
+                    <p>工作日历</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/calendar/set-workday" v-if="menuList.HolidaySet">工作日设置</el-menu-item>
+                    <el-menu-item index="/calendar/work-section" v-if="menuList.SectionSet">工作区间设置</el-menu-item>
+                    <el-menu-item index="/calendar/the-offer" v-if="menuList.OfferSet">报盘日设置</el-menu-item>
+                    <el-menu-item index="/calendar/closing-day" v-if="menuList.CheckoutSet">结账日设置</el-menu-item>
+                    <el-menu-item index="/calendar/account-period" v-if="menuList.AccountPeriodSet">保单账期设置</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="11" v-if="menuList.ZFT">
+                <template slot="title" height="200px">
+                    <i class="icon-zft"></i>
+                    <p class="mg-four">支付管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/payment/pay-make-bill" v-if="menuList.ZFTMkBill">资金支付-制单</el-menu-item>
+                    <el-menu-item index="/payment/pay-payment" v-if="menuList.ZFTPayBill">资金支付-支付</el-menu-item>
+                    <el-menu-item index="/payment/pay-look-over" v-if="menuList.ZFTViewBill">资金支付-查看</el-menu-item>
+                    <el-menu-item index="/payment/batch-make-bill" v-if="menuList.ZFTBatchBill">批量支付-制单</el-menu-item>
+                    <el-menu-item index="/payment/batch-payment" v-if="menuList.ZFTBatchPay">批量支付-支付</el-menu-item>
+                    <el-menu-item index="/payment/batch-look-over" v-if="menuList.ZFTBatchView">批量支付-查看</el-menu-item>
+                    <el-menu-item index="/payment/payee-message" v-if="menuList.ZFTSuplierAcc">收款方信息管理</el-menu-item>
+                    <el-menu-item index="/payment/deal-check?bizType=9" v-if="menuList.ZFTCheck">交易核对</el-menu-item>
+                    <el-menu-item index="/payment/refund-ticket" v-if="menuList.ZFTRefund">退票支付</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="12" v-if="menuList.GJT">
+                <template slot="title" height="200px">
+                    <i class="icon-gjt"></i>
+                    <p>归集管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/collection/collection-set" v-if="menuList.GJSetting">自动归集设置</el-menu-item>
+                    <el-menu-item index="/collection/collection-manage" v-if="menuList.GJMgr">自动归集管理</el-menu-item>
+                    <el-menu-item index="/collection/collection-look" v-if="menuList.GJView">自动归集查看</el-menu-item>
+                    <el-menu-item index="/collection/collection-statement" v-if="menuList.GJReport">自动归集报表
+                    </el-menu-item>
+                    <el-menu-item index="/collection/not-directly-set" v-if="menuList.GJBatchBill">非直连归集-制单
+                    </el-menu-item>
+                    <el-menu-item index="/collection/no-directly-look" v-if="menuList.GJBatchView">非直连归集-查看
+                    </el-menu-item>
+                    <el-menu-item index="/payment/deal-check?bizType=12" v-if="menuList.GJCheck">交易核对</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="13" v-if="menuList.ZJXB">
+                <template slot="title" height="200px">
+                    <i class="icon-zjxb"></i>
+                    <p>资金下拨</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/allocation/fundpool-acc-set" v-if="menuList.ZJXBApSetting">资金池账户设置
+                    </el-menu-item>
+                    <el-menu-item index="/allocation/allocation-set" v-if="menuList.ZJXBSetting">自动下拨设置</el-menu-item>
+                    <el-menu-item index="/allocation/allocation-manage" v-if="menuList.ZJXBMgr">自动下拨管理</el-menu-item>
+                    <el-menu-item index="/allocation/allocation-view" v-if="menuList.ZJXBView">自动下拨查看</el-menu-item>
+                    <el-menu-item index="/allocation/allocation-chart" v-if="menuList.ZJXBReport">自动下拨报表</el-menu-item>
+                    <el-menu-item index="/allot/allot-deal-check?bizType=13" v-if="menuList.ZJXBChecked">交易核对
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="14" v-if="menuList.SKT">
+                <template slot="title" height="200px">
+                    <i class="icon-skt"></i>
+                    <p>收款管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/receivables/receive-make-bill" v-if="menuList.SKTMkBill">资金收款-制单
+                    </el-menu-item>
+                    <el-menu-item index="/receivables/receive-look-over" v-if="menuList.SKTViewBill">资金收款-查看
+                    </el-menu-item>
+                    <el-menu-item index="/allot/allot-deal-check?bizType=15" v-if="menuList.SKTCheck">交易核对
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="15" v-if="menuList.ELECTB">
+                <template slot="title" height="200px">
+                    <i class="icon-electb"></i>
+                    <p>电子回单</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/electronicReceipt/electronic-receipt" v-if="menuList.ElectronicBillMgr">电子回单
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="16" v-if="menuList.GYLBFJ">
+                <template slot="title" height="200px">
+                    <i class="icon-gyl"></i>
+                    <p>广银联</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/wide-unionpay/strategy-set" v-if="menuList.GYLBFJSetting">广银联备付金设置
+                    </el-menu-item>
+                    <el-menu-item index="/wide-unionpay/unionpay-manage" v-if="menuList.GYLBFJMgr">广银联备付金管理
+                    </el-menu-item>
+                    <el-menu-item index="/wide-unionpay/task-look" v-if="menuList.GYLBFJView">广银联备付金查看</el-menu-item>
+                    <el-menu-item index="/payment/deal-check?bizType=14" v-if="menuList.GYLBFJCheck">广银联备付金核对
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="17" v-if="menuList.OADATAMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-oa"></i>
+                    <p class="mg-four">OA数据</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/OA-data/data-manage" v-if="menuList.DataMgt">接口数据管理</el-menu-item>
+                    <el-menu-item index="/OA-data/head-office-pay" v-if="menuList.OAHeadPay">总公司付款</el-menu-item>
+                    <el-menu-item index="/OA-data/filiale-payment" v-if="menuList.OABranchPay">分公司付款</el-menu-item>
+                    <el-menu-item index="/OA-data/suspicious-data" v-if="menuList.OACheckDoubtful">可疑数据管理</el-menu-item>
+                    <el-menu-item index="/payment/deal-check?bizType=20" v-if="menuList.OACheck">交易核对</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="18" v-if="menuList.TPGL">
+                <template slot="title" height="200px">
+                    <i class="icon-tpgl"></i>
+                    <p class="mg-four">退票管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/refund-ticket/refund-edit" v-if="menuList.RefundEdit">退票编辑</el-menu-item>
+                    <el-menu-item index="/refund-ticket/refund-dispose" v-if="menuList.ActiveRefund">主动退票</el-menu-item>
+                    <el-menu-item index="/refund-ticket/suspicious-refund" v-if="menuList.DoubtfulRefund">可疑退票
+                    </el-menu-item>
+                    <el-menu-item index="/refund-ticket/refund-inquiry" v-if="menuList.QRefund">退票查询</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="19" v-if="menuList.SYSSET">
+                <template slot="title" height="200px">
+                    <i class="icon-xtsz"></i>
+                    <p class="mg-four">系统设置</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/system-set/aisle-set" v-if="menuList.BankkeySet">通道设置</el-menu-item>
+                    <el-menu-item index="/system-set/aisle-matching" v-if="menuList.ChannelMatching">业务场景配置</el-menu-item>
+                    <el-menu-item index="/system-set/bankkey-set" v-if="menuList.ChannelSet">bankkey设置</el-menu-item>
+                    <el-menu-item index="/system-set/code-manage-set" v-if="menuList.CodeManageSet">字典管理</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="19" v-if="menuList.SYSSETADMIN">
+                <template slot="title" height="200px">
+                    <i class="icon-xtsz"></i>
+                    <p class="mg-four">系统设置</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/system-set/aisle-set-admin" >通道设置</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="20" v-if="menuList.DATADOUBTFUL">
+                <template slot="title" height="200px">
+                    <i class="icon-fcyj"></i>
+                    <p class="mg-four">防重预警</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/batch-payment/prevent-repet" v-if="menuList.DataAntiDualWaring">付款防重
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gaterh-prevent-repet" v-if="menuList.RecvDataAntiDualWaring">收款防重
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="21" v-if="menuList.BATCHPAY">
+                <template slot="title" height="200px">
+                    <i class="icon-plfk"></i>
+                    <p class="mg-four">批量付款</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/batch-payment/pay-check-batch" v-if="menuList.PayCheckAllot">核对组批
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/pay-disk-sending" v-if="menuList.PayBatchSend">盘片发送
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/pay-diskbacking" v-if="menuList.PayBatchResp">盘片回盘
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/settle-accounts" v-if="menuList.PayBatchCheck">付款结算对账-通联
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/settle-historyaccounts" v-if="menuList.PayBatchCheckHis">付款公众号数据对账
+                    </el-menu-item>
+<!--                    <el-menu-item index="/batch-payment/gather-gather-settle-YBCHeck" v-if="menuList.PayYBCheck">银保通对账
+                    </el-menu-item>-->
+                    <el-menu-item index="/batch-payment/abnormal-dispose" v-if="menuList.PayBatchDoExcp">异常处理
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/pay-bank-check" v-if="menuList.PayBankCheck">付款结算对账-直连
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="22" v-if="menuList.BATCHRECV">
+                <template slot="title" height="200px">
+                    <i class="icon-plsk"></i>
+                    <p class="mg-four">批量收款</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/batch-gather/gather-check-batch" v-if="menuList.RecvCheckAllot">核对组批
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-disk-sending" v-if="menuList.RecvBatchSend">盘片发送
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-diskbacking" v-if="menuList.RecvBatchResp">盘片回盘
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-settle-accounts" v-if="menuList.RecvBatchCheck">收款结算对账-通联
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-settle-confirm" v-if="menuList.RecvSettleConfirm">收款银行结算确认-通联
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/wechat-settle-accounts" v-if="menuList.WechatRecvSettleAccounts">微信收款结算对账
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/wechat-settle-confirm" v-if="menuList.WechatRecvSettleConfirm">微信收款结算确认
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/recv-bank-check" v-if="menuList.RecvBankCheck">收款结算对账-直连
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-gather-settle-hisaccounts" v-if="menuList.RecvBatchCheckHis">收款公众号数据对账
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-gather-settle-YBCHeck" v-if="menuList.RecvYBCheck">银保通对账
+                    </el-menu-item>
+                    <el-menu-item index="/batch-gather/gather-abnormal" v-if="menuList.RecvBatchDoExcp">异常处理
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="23" v-if="menuList.COUNTERPAY">
+                <template slot="title" height="200px">
+                    <i class="icon-gmfk"></i>
+                    <p class="mg-four">网银付款</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/counter-payment/payment-workbench" v-if="menuList.PayCounterPlat">付款工作台
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/pay-project-mangement" v-if="menuList.PayProjectMangement">直付项目管理
+                    </el-menu-item>
+                    <el-menu-item index="/batch-payment/pay-project-payment" v-if="menuList.PayProjectPayment">直付项目付款
+                    </el-menu-item>
+                    <el-menu-item index="/counter-payment/counter-settle-account" v-if="menuList.PayCounterCheck">结算对账
+                    </el-menu-item>
+                    <el-menu-item index="/counter-payment/jd-pay-counter-plat" v-if="menuList.JdPayCounterPlat">京东付款工作台
+                    </el-menu-item>
+                    <el-menu-item index="/counter-payment/suspect-data-manage" v-if="menuList.SuspectDataManage">可疑数据管理
+                    </el-menu-item>
+                    <el-menu-item index="/counter-payment/refund-ticket/refund-initiative" v-if="menuList.RefundInitiative">主动退票</el-menu-item>
+                    <el-menu-item index="/counter-payment/refund-ticket/refund-query" v-if="menuList.RefundQuery">退票查询</el-menu-item>
+<!--                    <el-submenu index="37" v-if="menuList.ECPTPGL">-->
+<!--                        <template slot="title" height="50px">-->
+<!--                            <p class="mg-four">退票管理</p>-->
+<!--                        </template>-->
+<!--                        <el-menu-item-group>-->
+<!--                            <el-menu-item index="/counter-payment/refund-ticket/refund-initiative" v-if="menuList.RefundInitiative">主动退票</el-menu-item>-->
+<!--                            <el-menu-item index="/counter-payment/refund-ticket/refund-query" v-if="menuList.RefundQuery">退票查询</el-menu-item>-->
+<!--                        </el-menu-item-group>-->
+<!--                    </el-submenu>-->
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="24" v-if="menuList.DZT">
+                <template slot="title" height="200px">
+                    <i class="icon-dzt"></i>
+                    <p>对账管理</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/reconciliation/initial-balance" v-if="menuList.DztInitData">期初数据
+                    </el-menu-item>
+                    <el-menu-item index="/reconciliation/balance-adjust" v-if="menuList.DztBalAdjust">余额调节表
+                    </el-menu-item>
+                    <el-menu-item index="/allot/allot-deal-check?bizType=100" v-if="menuList.DztInitCheck">期初数据核对
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="25" v-if="menuList.PREVOUCHERSUBMIT">
+                <template slot="title" height="200px">
+                    <i class="icon-ymyt"></i>
+                    <p>月末预提</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/endmonth-advance/operation" v-if="menuList.PREVOUCHEROPERATION">预提提交</el-menu-item>
+                    <el-menu-item index="/endmonth-advance/review" v-if="menuList.PREVOUCHERCONFIRM">预提复核</el-menu-item>
+                    <el-menu-item index="/endmonth-advance/advance-query" v-if="menuList.PREVOUCHERQUERY">查询记录</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="26" v-if="menuList.RECVCOUNTER">
+                <template slot="title" height="200px">
+                    <i class="icon-gmsk"></i>
+                    <p>柜面收款</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/counter-gather/single-gather" v-if="menuList.RECVCOUNTERPERSON">个单收款</el-menu-item>
+                    <el-menu-item index="/counter-gather/mass-single-gather" v-if="menuList.RECVCOUNTERGROUP">团单收款</el-menu-item>
+                    <el-menu-item index="/counter-gather/wait-to-match" v-if="menuList.RECVCOUNTERMATCH">待匹配收款</el-menu-item>
+                    <el-menu-item index="/counter-gather/counter-account" v-if="menuList.RECVCOUNTERCHECK">结算对账</el-menu-item>
+                    <el-menu-item index="/counter-gather/pos-query" v-if="menuList.RECVCOUNTEPOSIMPORT">POS机明细导入</el-menu-item>
+                    <el-menu-item index="/counter-gather/pos-account" v-if="menuList.RECVCOUNTERPOSCHECK">POS记录与明细对账</el-menu-item>
+                    <el-menu-item index="/counter-gather/pos-bank-account" v-if="menuList.RECVCOUNTERPOSDETAILCHECK">POS记录与流水对账</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="27" v-if="menuList.VOUCHER">
+                <template slot="title" height="200px">
+                    <i class="icon-pzgl"></i>
+                    <p>凭证</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/voucher/voucher-query" v-if="menuList.VoucherQuery">凭证查询</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="28" v-if="menuList.REPORT">
+                <template slot="title" height="200px" >
+                    <i class="icon-bb"></i>
+                    <p>报表查询</p>
+                </template>
+                <el-menu-item-group >
+                    <el-menu-item index="/report/oa-report-query" v-if="menuList.OAREPORTQUERY">OA支付记录查询</el-menu-item>
+                    <el-menu-item index="/report/gjt-report-query" v-if="menuList.GJTREPORTQUERY">归集通查询报表</el-menu-item>
+                    <el-menu-item index="/report/dj-report-query" v-if="menuList.CGJYREPORTQUERY">成功交易单据查询</el-menu-item>
+                    <el-menu-item index="/report/dzd-report-query" v-if="menuList.DZDREPORTQUERY">银行对账单查询报表</el-menu-item>
+                    <el-menu-item index="/report/sff-report-query" v-if="menuList.SFFREPORTQUERY">收付费对账报表</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="29" v-if="menuList.NEWCOMP">
+                <template slot="title" height="200px" >
+                    <i class="icon-ywfk"></i>
+                    <p>NC数据</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/ncData/head-office-pay" v-if="menuList.NEWCOMPPAY">总公司付款</el-menu-item>
+                    <el-menu-item index="/ncData/suspicious-data" v-if="menuList.NEWCOMPDOUBTFUL">可疑数据管理</el-menu-item>
+                    <el-menu-item index="/ncData/deal-check" v-if="menuList.NEWCOMPCHECK">交易核对</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="36" v-if="menuList.COMP">
+                <template slot="title" height="200px" >
+                    <i class="icon-ywfk"></i>
+                    <p>COMP数据</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/COMP-Data/suspicious-data" v-if="menuList.COMPDOUBTFUL">可疑数据管理</el-menu-item>
+                    <el-menu-item index="/COMP-Data/comp-check-batch" v-if="menuList.COMPCHECKALLOT">账户匹配</el-menu-item>
+                    <el-menu-item index="/COMP-Data/comp-commission-payment" v-if="menuList.COMPPAY">佣金付款</el-menu-item>
+                    <el-menu-item index="/COMP-Data/deal-check" v-if="menuList.COMPCHECK">交易核对</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="30" v-if="menuList.FKDATAMGT">
+                <template slot="title" height="200px">
+                    <i class="icon-fk"></i>
+                    <p class="mg-four">费控数据</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/FK-data/data-manage" v-if="menuList.FKDataMgt">接口数据管理</el-menu-item>
+                    <el-menu-item index="/FK-data/suspicious-data" v-if="menuList.FKCheckDoubtful">付款可疑数据管理</el-menu-item>
+                    <el-menu-item index="/FK-data/suspicious-datarecv" v-if="menuList.FKCheckDoubtfulRecv">收款可疑数据管理</el-menu-item>
+                    <el-menu-item index="/FK-data/head-office-pay" v-if="menuList.FKHeadPay">总公司付款</el-menu-item>
+                    <el-menu-item index="/FK-data/filiale-payment" v-if="menuList.FKBranchPay">分公司付款</el-menu-item>
+                    <el-menu-item index="/FK-data/deal-check?bizType=48" v-if="menuList.FKCheck">付款交易核对</el-menu-item>
+                    <el-menu-item index="/FK-data/head-office-recv" v-if="menuList.FKHeadRecv">总公司收款</el-menu-item>
+                    <el-menu-item index="/FK-data/filiale-recv" v-if="menuList.FKBranchRecv">分公司收款</el-menu-item>
+                    <el-menu-item index="/FK-data/recv-deal-check?bizType=48" v-if="menuList.FKRecvCheck">收款交易核对</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="31" v-if="menuList.PAYMENTREPORT">
+                <template slot="title" height="200px">
+                    <i class="icon-bb"></i>  <!--样式修改 TODO-->
+                    <p class="mg-four">收付费报表</p> <!--收付费管理分析报表-->
+                </template>
+                <el-menu-item-group>
+                    <!--<el-menu-item index="/balance/history-detail" v-if="menuList.OAREPORTQUERY">收付费业务汇总表</el-menu-item>-->
+                    <el-menu-item index="/payment-report/payment-summary" v-if="menuList.PAYMENTSUMMARY">收付费业务统计表</el-menu-item>
+                    <el-menu-item index="/payment-report/insurance-business-channel" v-if="menuList.INSURANCEINCOMEANDEXPENDITURE">分渠道收付统计表</el-menu-item>
+                    <el-menu-item index="/payment-report/payment-success-rate" v-if="menuList.PAYMENTSUCCESSRATE">收付费成功率波动</el-menu-item>
+                    <el-menu-item index="/payment-report/settlement-age-analysis" v-if="menuList.SETTLEMENTAGEANALYSIS">资金结算账龄分析</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="32"  v-if="menuList.ENCRYPT">
+                <template slot="title" height="200px">
+                    <i class="icon-ywfk"></i>  <!--样式修改 TODO-->
+                    <p class="mg-four">文件加解密</p>
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="/encryptAndDecrypt/encryptAndDecrypt" v-if="menuList.EAD">加解密</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+        </el-menu>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Left",
+        created: function () {
+            this.setMenu();
+        },
+        data: function () {
+            return {
+                isCollapse: true,
+                menuList: {
+                    BRWNMGT:false, //交易流水导入
+                    BRWNImport:false,//交易流水导入子菜单
+                    DMMGT: false, //数据管理
+                    BasicDataMgt: false, //基础数据维护
+                    CiticWhite: false, // 中信白名单导入
+                    BcmWhite: false,// 交通白名单导入
+                    SettAccMgt: false, //结算账户设置
+                    MerchMgt: false, //商户号设置
+                    ChannelMgt: false, //渠道设置
+                    RouteMgt: false, //路由设置
+                    PayBank: false, //工行直连付款
+                    CRMGT:false,//佣金费率维护
+                    CRMaintain:false,//佣金费率维护
+                    UMMGT: false, //用户管理
+                    UsrMgt: false, //用户维护
+                    UsrGpMgt: false, //用户组设置
+                    UsrMenuMgt: false, //用户菜单设置
+
+                    RTPRMGT: false, //实时交易
+                    RTGXPayMgt: false, //个险核心实时代付
+                    RTTXPayMgt: false, //团险核心实时代付
+                    RTYDQrCodeMgt: false, //移动展业二维码
+                    RTYDRecvMgt: false, //移动展业实时代扣
+
+                    ACCMGT: false, //账户通
+                    AccOpenIntAppl: false, //开户事项申请
+                    AccOpenComAppl: false, //开户信息补录申请
+                    AccOpenConfirm: false, //开户确认
+                    AccChgAppl: false, //账户变更申请
+                    AccChgComAppl: false, //账户变更补录申请
+                    AccMtc: false, //账户信息维护
+                    AccFreezeAppl: false, //账户解冻申请
+                    AccDefreezeAppl: false, //账户冻结申请
+                    AccCloseIntAppl: false, //销户事项申请
+                    AccCloseComAppl: false, //销户信息补录申请
+                    AccCloseConfirm: false, //销户确认
+
+                    WFMGT: false, //审批流管理
+                    WFDefine: false, //审批流程定义
+                    WFTrace: false, //业务流程追踪
+                    WFLinK: false, //业务配置审批流程
+
+                    WFPLAT: false, //审批平台
+                    MyWFPLAT: false, //我的审批平台
+                    ApproveTransfer: false, //权限转移
+
+                    YET: false, //余额通
+                    CurBal: false, //当日余额明细
+                    CulBalSummary: false, //当日余额汇总
+                    CulBalWave: false, //当日余额波动
+                    HisBal: false, //历史余额明细
+                    HisBalSummary: false, //历史余额汇总
+                    HisBalWave: false, //历史余额波动
+                    BalImport: false, //历史余额波动
+
+                    JYT: false, //交易通
+                    CurTrans: false, //当日交易明细
+                    CurTransSummary: false, //当日交易汇总
+                    HisTrans: false, //历史交易明细
+                    HisTransSummary: false, //历史交易汇总
+                    HisTransWave: false, //历史交易波动
+                    TransImport: false, //历史交易波动
+
+                    DBT: false, //调拨通
+                    DbtMkBill: false, //内部调拨-制单
+                    DbtPayBill: false, //内部调拨-支付
+                    DbtViewBill: false, //内部调拨-查看
+                    DbtBatchBill: false, //批量调拨-制单
+                    DbtBatchView: false, //批量调拨-查看
+                    DbtBatchPay: false, //批量调拨-支付
+                    DbtCheck: false, //内部调拨-交易核对
+
+                    ZFT: false, //支付通
+                    ZFTMkBill: false, //资金支付-制单
+                    ZFTPayBill: false, //资金支付-支付
+                    ZFTViewBill: false, //资金支付-查看
+                    ZFTBatchBill: false, //资金支付-批量制单
+                    ZFTBatchPay: false, //资金支付-批量支付
+                    ZFTBatchView: false, //资金支付-批量查看
+                    ZFTCheck: false, //资金支付-交易核对
+                    ZFTSuplierAcc: false, //收款方账户维护
+                    ZFTRefund: false, //退票支付
+
+                    GJT: false, //归集通
+                    GJSetting: false, //自动归集设置
+                    GJMgr: false, //自动归集管理
+                    GJView: false, //自动归集查看
+                    GJReport: false, //自动归集报表
+                    GJCheck: false, //自动归集核对
+                    GJBatchBill: false, //自动归集核对
+                    GJBatchView: false, //自动归集核对
+
+                    WDATESET: false, //工作日历
+                    WCALSET: false, //工作日历(管理员模块)
+                    HolidaySet: false, //自动归集设置
+                    SectionSet: false, //工作区间设置
+                    OfferSet: false, //报盘日设置
+                    CheckoutSet: false, //结账日设置
+                    AccountPeriodSet: false, //系统账期日设置
+
+
+                    ZJXB: false, //资金下拨
+                    ZJXBApSetting: false, //资金下拨账户设置
+                    ZJXBSetting: false, //资金下拨设置
+                    ZJXBMgr: false, //资金下拨管理
+                    ZJXBView: false, //资金下拨查看
+                    ZJXBReport: false, //资金下拨报表
+                    ZJXBChecked: false, //资金下拨及交易核对
+
+                    SKT: false, //收款通
+                    SKTMkBill: false, //收款通账户设置
+                    SKTViewBill: false, //收款通设置
+                    SKTCheck: false, //收款通交易核对
+
+                    GYLBFJ: false, //广银联备付金
+                    GYLBFJSetting: false, //广银联备付金设置
+                    GYLBFJMgr: false, //广银联备付金管理
+                    GYLBFJView: false, //广银联备付金查看
+                    GYLBFJCheck: false, //广银联备付金核对
+
+                    OADATAMGT: false, //OA数据管理
+                    DataMgt: false, //接口数据管理
+                    OAHeadPay: false, //总公司付款
+                    OABranchPay: false, //分公司付款
+                    OACheckDoubtful: false, //分公司付款
+                    OACheck: false, //交易核对
+
+                    ELECTB: false, //电子回单
+                    ElectronicBillMgr: false, //电子回单
+
+                    TPGL: false, //退票管理
+                    ActiveRefund: false, //主动退票
+                    DoubtfulRefund: false, //可疑退票
+                    QRefund: false, //退票查询
+                    RefundEdit: false, //退票编辑
+
+                    SYSSET: false, //系统设置
+                    BankkeySet: false, //Bankkey设置
+                    ChannelMatching: false, //通道匹配
+                    ChannelSet: false, //通道设置
+                    CodeManageSet: false,//字典管理
+
+
+                    SYSSETADMIN: false, //系统设置
+
+                    BATCHPAY: false, //批量付款
+                    PayCheckAllot: false, //核对组批
+                    PayBatchSend: false, //盘片发送
+                    PayBatchResp: false, //盘片回盘
+                    PayBatchCheck: false, //结算对账
+                    PayBatchCheckHis: false, //结算对账
+                    PayYBCheck: false,
+                    PayBatchDoExcp: false, //异常处理
+                    PayBankCheck: false, // 银行付款流水对账
+
+                    BATCHRECV: false, //批量收款
+                    RecvCheckAllot: false, //核对组批
+                    RecvBatchSend: false, //盘片发送
+                    RecvBatchResp: false, //盘片回盘
+                    RecvBatchCheck: false, //结算对账
+                    RecvSettleConfirm: false, //资金结算确认
+                    WechatRecvSettleConfirm: false, //微信收款结算确认
+                    WechatRecvSettleAccounts: false, //微信收款结算对账
+                    RecvBatchCheckHis: false, //结算对账
+                    RecvYBCheck: false,
+                    RecvBatchDoExcp: false, //异常处理
+                    RecvBankCheck: false, // 银行付款流水信息对账
+
+                    DATADOUBTFUL: false, //防重预警
+                    DataAntiDualWaring: false, //批付防重预警
+                    RecvDataAntiDualWaring: false, //批收防重预警
+
+                    COUNTERPAY: false, //柜面付款
+                    ECPTPGL:false,//网银付款-退票管理
+                    RefundInitiative:false,//主动退票
+                    RefundQuery:false,//退票查询
+                    PayCounterCheck: false, //结算对账
+                    PayCounterPlat: false, //付款工作台
+                    JdPayCounterPlat:false,// 京东付款工作台
+                    SuspectDataManage:false,// 可疑数据管理
+                    PayProjectMangement: false,//直付项目管理
+                    PayProjectPayment: false,//直付项目付款
+
+                    DZT: false, //对账通
+                    DztInitData: false, //期初余额设置
+                    DztBalAdjust: false, //余额调节表
+                    DztInitCheck: false, //期初数据核对
+
+                    PREVOUCHERSUBMIT: false, //月末预提
+                    PREVOUCHEROPERATION: false, //操作
+                    PREVOUCHERCONFIRM: false, //复核
+                    PREVOUCHERQUERY: false, //查询
+
+                    VOUCHER: false,//凭证
+                    VoucherQuery: false,//凭证查询
+
+                    RECVCOUNTER: false, //柜面收
+                    RECVCOUNTERPERSON: false, //个单收款
+                    RECVCOUNTERGROUP: false, //团单收款
+                    RECVCOUNTERCHECK: false, //结算对账
+                    RECVCOUNTERPOSCHECK: false, //POS记录与明细对账
+                    RECVCOUNTERPOSDETAILCHECK: false, //POS记录与流水对账
+                    RECVCOUNTEPOSIMPORT: false, //POS机明细导入
+                    RECVCOUNTERMATCH: false, //待匹配收款
+
+                    REPORT: false,//报表
+                    OAREPORTQUERY: false,//OA报表查询
+                    GJTREPORTQUERY: false,//归集通报表查询
+                    CGJYREPORTQUERY: false,//归集通报表查询
+                    DZDREPORTQUERY: false,//银行对账单报表查询
+                    SFFREPORTQUERY: false,
+
+                    NEWCOMP: false,//报表
+                    NEWCOMPPAY: false,//OA报表查询
+                    NEWCOMPDOUBTFUL: false,//归集通报表查询
+                    NEWCOMPCHECK: false,//银行对账单报表查询
+
+                    COMP: false,//COMP数据
+                    COMPDOUBTFUL: false,//COMP可疑数据管理
+                    COMPCHECKALLOT: false,//COMP核对组批
+                    COMPPAY: false,//COMP佣金支付
+                    COMPCHECK: false,//COMP交易核对
+
+                    FKDATAMGT: false,//费控数据
+                    FKDataMgt: false,//接口数据管理
+                    FKHeadPay: false,//总公司付款
+                    FKBranchPay: false,//分公司付款
+                    FKHeadRecv: false,//总公司收款
+                    FKBranchRecv: false,//分公司收款
+                    FKCheckDoubtful: false,//可疑数据管理
+                    FKCheckDoubtfulRecv: false,//可疑数据管理
+                    FKCheck: false,//交易核对
+                    FKRecvCheck: false,//收款交易核对
+
+                    PAYMENTREPORT: false,//收付费报表
+                    PAYMENTSUMMARY: false, //
+                    INSURANCEINCOMEANDEXPENDITURE: false,//保险业务分渠道汇总
+                    PAYMENTSUCCESSRATE:false, //收付费成功率波动
+                    SETTLEMENTAGEANALYSIS:false ,//资金结算账龄分析
+                    ENCRYPT:false,//文件加解密
+                    EAD:false
+                }
+            }
+        },
+        methods: {
+            //根据权限设置菜单栏
+            setMenu: function () {
+                var user = JSON.parse(window.sessionStorage.getItem("user"));
+                var menuList = this.menuList;
+                for (var k in menuList) {
+                    menuList[k] = false;
+                }
+
+                if (user.menu_info) {
+                    var menuList = user.menu_info;
+                    for (var i = 0; i < menuList.length; i++) {
+                        var items = menuList[i].items;
+                        for (var j = 0; j < items.length; j++) {
+                            var item = items[j];
+                            for (var k in this.menuList) {
+                                if (item.code == k) {
+                                    this.menuList[k] = true;
+                                    break;
+                                }
+                            }
+                        }
+                        for (var key in this.menuList) {
+                            if (menuList[i].code == key) {
+                                this.menuList[key] = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        },
+        computed: {
+            showBgc: function () {
+                var currentPath = this.$route.name;
+                if (currentPath == "Home" && this.$route.params.refreshUser) {
+                    this.setMenu();
+                }
+                if (!currentPath || currentPath == "Home") {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    }
+</script>
+
