@@ -1,3 +1,13 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: wangyb
+ * @Date: 2022-10-11 09:42:11
+ * @LastEditors: wangyb
+ * @LastEditTime: 2022-10-11 13:09:17
+ */
+const path = require('path')
+const resolve = dir => path.join(__dirname, dir)
 module.exports = {
     // 项目部署的基础路径
     publicPath: './',
@@ -26,5 +36,9 @@ module.exports = {
         //是否为 CSS 开启 source map。设置为 true 之后可能会影响构建的性能
         sourceMap: false,
 
+    },
+    chainWebpack: config => {
+        config.resolve.alias
+            .set('@', resolve('src'))
     }
 }

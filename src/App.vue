@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: wangyb
+ * @Date: 2022-10-11 09:42:11
+ * @LastEditors: wangyb
+ * @LastEditTime: 2022-10-11 14:09:28
+-->
 <!--<template>-->
 <!--  <div id="app">-->
 <!--    <div id="nav">-->
@@ -32,9 +40,7 @@
 <!--</style>-->
 
 <style>
-#app {
-  height: 100%;
-}
+@import "~@/style/index.less";
 </style>
 <template>
   <div id="app">
