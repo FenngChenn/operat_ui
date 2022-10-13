@@ -34,7 +34,7 @@ import './config/config'
 //       return Promise.reject(err);
 //     }
 // );
-// // Date.prototype.format = function(fmt)
+// Date.prototype.format = function(fmt)
 // String.prototype.format = function(fmt)
 // {   //author: fc
 //   var date = new Date();   //获取当前日期时间
@@ -54,7 +54,7 @@ import './config/config'
 //       fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
 //   return fmt;
 // }  ;
-// //response拦截器
+//response拦截器
 // axios.interceptors.response.use(
 //     response => {
 //       return response;

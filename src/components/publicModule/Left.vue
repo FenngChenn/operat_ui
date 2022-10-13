@@ -966,7 +966,7 @@
     export default {
         name: "Left",
         created: function () {
-            this.setMenu();
+            // this.setMenu();
         },
         data: function () {
             return {

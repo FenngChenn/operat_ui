@@ -217,7 +217,7 @@
     export default {
         name: 'Top',
         created: function () {
-            this.setUserText();
+            // this.setUserText();
         },
         data: function () {
             return {
