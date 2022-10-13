@@ -297,13 +297,12 @@ export default {
         branchCode: "", //分公司
         subBranchCode: "", //中支公司
         minBusiAmount: "", //最小金额
-        minBusiAmount: "", //最大金额
+        maxBusiAmount: "", //最大金额
         policyNo: "", //保单号
         orderNo: "", //订单号
         tradeStatus: "", //支付状态
         checkStatus: "", //对账状态
       },
-      listLoading: true,
       tableList: [
         {
           id: 1,
