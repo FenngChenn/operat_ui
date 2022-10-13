@@ -260,13 +260,13 @@
 
 <template>
     <el-container id="main">
-        <el-header :class="{'header-none':!headerShow}">
-            <Top></Top>
-        </el-header>
+<!--        <el-header :class="{'header-none':!headerShow}">-->
+<!--            <Top></Top>-->
+<!--        </el-header>-->
         <el-container id="contented" :class="{'home-bgc':showBgc}">
-            <el-aside width="70px">
-                <Left></Left>
-            </el-aside>
+<!--            <el-aside width="70px">-->
+<!--                <Left></Left>-->
+<!--            </el-aside>-->
             <el-main :class="{'home-bgc-none':showBgc}">
                 <router-view></router-view>
             </el-main>

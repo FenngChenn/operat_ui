@@ -55,37 +55,37 @@ String.prototype.format = function(fmt)
   return fmt;
 }  ;
 //response拦截器
-axios.interceptors.response.use(
-    response => {
-      return response;
-    },
-    error => {
-      if (error.response) {
-        switch (error.response.status) {
-          case 401:
-            // store.commit('del_store');
-            ElementUI.Message({
-              type: 'warning',
-              message: "部分数据无请求权限",
-              duration: 2000
-            });
-            router.replace({
-              path: "/login",
-              query: {redirect: router.currentRoute.fullPath}//登录成功后跳入浏览的当前页面
-            });
-            break;
-          case 500:
-            ElementUI.Message({
-              type: 'error',
-              message: "数据请求错误,请检查服务器",
-              duration: 2000
-            });
-            break;
-        }
-      }
-      return Promise.reject(error.response.data);
-    }
-)
+// axios.interceptors.response.use(
+//     response => {
+//       return response;
+//     },
+//     error => {
+//       if (error.response) {
+//         switch (error.response.status) {
+//           case 401:
+//             // store.commit('del_store');
+//             ElementUI.Message({
+//               type: 'warning',
+//               message: "部分数据无请求权限",
+//               duration: 2000
+//             });
+//             router.replace({
+//               path: "/login",
+//               query: {redirect: router.currentRoute.fullPath}//登录成功后跳入浏览的当前页面
+//             });
+//             break;
+//           case 500:
+//             ElementUI.Message({
+//               type: 'error',
+//               message: "数据请求错误,请检查服务器",
+//               duration: 2000
+//             });
+//             break;
+//         }
+//       }
+//       return Promise.reject(error.response.data);
+//     }
+// )
 Vue.prototype.$axios = axios;
 
 /*引入公共方法文件*/
