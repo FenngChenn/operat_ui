@@ -4,7 +4,7 @@
  * @Author: wangyb
  * @Date: 2022-10-11 11:41:52
  * @LastEditors: wangyb
- * @LastEditTime: 2022-10-13 10:29:52
+ * @LastEditTime: 2022-10-13 13:07:22
 -->
 <template>
   <div class="check-manage">
@@ -20,10 +20,13 @@
         {{ item.v }}
       </div>
     </div> -->
+    <div class="manage-title">
+      <h1 class="title">对账查询</h1>
+    </div>
     <div class="manage-content">
       <!-- 表单 -->
       <div class="manage-form">
-        <el-form ref="manageForm" :model="manageForm">
+        <el-form ref="manageForm" :model="manageForm" size="mini">
           <el-form-item>
             <el-select v-model="manageForm.source" placeholder="数据来源">
               <el-option
@@ -111,6 +114,9 @@
           border
           fit
           highlight-current-row
+          :cell-style="{ textAlign: 'center' }" 
+          :header-cell-style="{ textAlign: 'center' }"
+          size="mini"
         >
           <el-table-column v-if="transferData.length > 0" type="selection" width="55"> </el-table-column>
           <el-table-column v-if="transferData.includes('sysCode')" align="center" label="出单系统">
@@ -197,8 +203,8 @@
       </div>
       <!-- 操作按钮 -->
       <div class="manage-view">
-        <el-button type="primary">对账主体信息核对</el-button>
-        <el-button type="primary">财务主体信息核对</el-button>
+        <el-button type="primary" size="mini">对账主体信息核对</el-button>
+        <el-button type="primary" size="mini">财务主体信息核对</el-button>
       </div>
       <!-- 分页器 -->
       <pagination
@@ -224,8 +230,8 @@
         />
       </div>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="submit"
+        <el-button size="mini" @click="dialogVisible = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="submit"
           >确 定</el-button
         >
       </span>
@@ -464,6 +470,12 @@ export default {
 <style lang="less" scoped>
 @import "~@/style/global.less";
 .check-manage {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  min-width: 960px;
+  min-height: 552px;
+  position: relative;
   .tab-list {
     display: flex;
     max-width: 480px;
@@ -478,8 +490,16 @@ export default {
       color: @tabActiveTxt;
     }
   }
+  .manage-title{
+    .title{
+      margin-bottom: 0;
+      line-height: 52px;
+    }
+  }
   .manage-content {
-    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    padding-bottom: 14px;
     .manage-form {
       .el-form {
         display: flex;

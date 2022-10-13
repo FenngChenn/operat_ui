@@ -4,7 +4,7 @@
  * @Author: wangyb
  * @Date: 2022-10-11 09:42:11
  * @LastEditors: wangyb
- * @LastEditTime: 2022-10-13 11:36:15
+ * @LastEditTime: 2022-10-13 13:36:26
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -83,7 +83,7 @@ const router = new Router({
           component: resolve => {
             require(['@/pages/checkManage/accoVerify.vue'], resolve)
           },
-          name: '/accoVerify',
+          name: 'accoVerify',
           meta: {
             title: '对账主体信息核对',
           }
