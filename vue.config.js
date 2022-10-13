@@ -4,7 +4,7 @@
  * @Author: wangyb
  * @Date: 2022-10-11 09:42:11
  * @LastEditors: wangyb
- * @LastEditTime: 2022-10-11 13:09:17
+ * @LastEditTime: 2022-10-13 09:27:03
  */
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir)
@@ -27,7 +27,18 @@ module.exports = {
     productionSourceMap: true,
 
     devServer: {
-
+        host: '0.0.0.0',
+        port: 8080, // 端口号
+        // 配置多个代理
+        // proxy: {
+        //     '/api': {
+        //         target: '', // 代理服务器路径
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             '^/api': '/', // 去掉接口地址中的api字符串
+        //         },
+        //     },
+        // },
     },
 
     runtimeCompiler: true,
@@ -40,5 +51,6 @@ module.exports = {
     chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))
+            .set('api',resolve('src/api'))
     }
 }

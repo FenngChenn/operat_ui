@@ -104,7 +104,7 @@ export default {
 .pagination-container {
   background: #fff;
   padding: 32px 16px;
-  /deep/.el-pagination{
+  :deep(.el-pagination){
     .btn-prev,.btn-next{
       padding: 0 10px;
     }

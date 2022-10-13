@@ -4,7 +4,7 @@
  * @Author: wangyb
  * @Date: 2022-10-11 11:41:52
  * @LastEditors: wangyb
- * @LastEditTime: 2022-10-12 18:05:06
+ * @LastEditTime: 2022-10-13 10:29:52
 -->
 <template>
   <div class="check-manage">
@@ -60,13 +60,11 @@
           <el-form-item>
             <div class="amont-item">
               <el-input
-                @input.native="formatNumber('minBusiAmount')"
                 v-model="manageForm.minBusiAmount"
                 placeholder="最小金额"
               ></el-input>
               <div class="line"></div>
               <el-input
-                @input.native="formatNumber('maxBusiAmount')"
                 v-model="manageForm.maxBusiAmount"
                 placeholder="最大金额"
               ></el-input>
@@ -238,6 +236,7 @@
 <script>
 import Pagination from "@/components/Pagination";
 import Transfer from "@/components/Transfer";
+import { getProductList } from 'api/checkManage/index'
 export default {
   name: "busiVerify",
   data() {
@@ -439,6 +438,7 @@ export default {
     Transfer
   },
   created(){
+    
   },
   methods: {
     tabItemClick(index) {
@@ -446,11 +446,6 @@ export default {
     },
     searchList() {
       console.log(this.manageForm);
-    },
-    formatNumber(field) {
-      this.manageForm[field] = this.manageForm[field]
-        .toString()
-        .replace(/[^\d]/g, "");
     },
     getList() {
       console.log(this.listQuery);
@@ -501,6 +496,11 @@ export default {
               margin: 0 5px;
               background: @tabBorder;
             }
+            :deep(.el-input){
+              .el-input__inner{
+                padding: 0 10px;
+              }
+            }
           }
         }
         .button-form-item {
@@ -510,7 +510,7 @@ export default {
     }
     .manage-view{
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       padding: 32px 10px;
     }
   }
