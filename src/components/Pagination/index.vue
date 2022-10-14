@@ -83,18 +83,30 @@ export default {
       }
     }
   },
+  data(){
+    return{
+      state:true
+    }
+  },
   methods: {
     handleSizeChange(val) {
-      this.$emit('pagination', { page: this.currentPage, limit: val })
-      if (this.autoScroll) {
-        scrollTo(0, 800)
+      // 先手动计算要跳转的最大页数
+      const pageMax = Math.ceil(this.total / val) 
+      // 判断当前页是否大于最大页数, 如果是就返回最大页数
+      if (this.page > pageMax) { 
+        // 再设置一个状态值, 当state为false时, handleCurrentChange事件将直接return, 这样就不会出现调用两次接口的情况
+        this.state = false 
+        this.$emit('pagination', { page: pageMax, limit: val })
+      } else {
+        this.$emit('pagination', { page: this.currentPage, limit: val })
       }
     },
     handleCurrentChange(val) {
-      this.$emit('pagination', { page: val, limit: this.pageSize })
-      if (this.autoScroll) {
-        scrollTo(0, 800)
+      if (!this.state) {
+        this.state = true
+        return
       }
+      this.$emit('pagination', { page: val, limit: this.pageSize })
     }
   }
 }

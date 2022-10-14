@@ -4,7 +4,7 @@
  * @Author: wangyb
  * @Date: 2022-10-12 16:55:49
  * @LastEditors: wangyb
- * @LastEditTime: 2022-10-13 17:55:45
+ * @LastEditTime: 2022-10-14 17:16:03
 -->
 <template>
   <div class="financial-verify">
@@ -114,6 +114,7 @@
           :cell-style="{ textAlign: 'center' }"
           :header-cell-style="{ textAlign: 'center' }"
           size="mini"
+          empty-text
         >
           <el-table-column
             v-if="transferData.length > 0"
@@ -132,11 +133,41 @@
           </template>
         </el-table>
       </div>
+      <!-- 操作按钮 -->
+      <div class="manage-view">
+        <el-button type="primary" size="mini">业务主体信息核对</el-button>
+        <el-button type="primary" size="mini">对账主体信息核对</el-button>
+      </div>
+      <!-- 分页器 -->
+      <pagination
+        v-show="total > 0"
+        :total="total"
+        :page.sync="listQuery.page"
+        :limit.sync="listQuery.limit"
+        @pagination="getList"
+      />
     </div>
+    <!-- 穿梭框弹窗 -->
+    <el-dialog title="列定义" :visible.sync="dialogVisible" width="60%">
+      <div class="transfer-content">
+        <transfer
+          :titles="['未选中列表', '已选中列表']"
+          :transferData="transferData"
+          :transferArr.sync="transferArr"
+          @getTransfer="getTransferData"
+        />
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button size="mini" @click="dialogVisible = false">取 消</el-button>
+        <el-button size="mini" type="primary" @click="submit">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import Pagination from "@/components/Pagination";
+import Transfer from "@/components/Transfer";
 export default {
   name: "financialVerify",
   data() {
@@ -201,7 +232,7 @@ export default {
           cpicAcNo: "上海-公司账号", //公司账号
           customerName: "上海-客户名称", //客户名称
           finDepCode: "上海-财务部门代码", //财务部门代码
-          Currency_code: "上海-币种代码", //币种代码
+          currencyCode: "上海-币种代码", //币种代码
           finMakbillOper: "上海-财务凭证制单确认人", //财务凭证制单确认人
           finMakbillDate: "上海-财务凭证制单确认日", //财务凭证制单确认日
           happenDate: "上海-发生日期", //发生日期
@@ -314,7 +345,7 @@ export default {
           label: "财务部门代码",
         },
         {
-          key: "Currency_code",
+          key: "currencyCode",
           label: "币种代码",
         },
         {
@@ -358,11 +389,31 @@ export default {
           label: "支票状态",
         },
       ],
+      total: 734,
+      listLoading: true,
+      listQuery: {
+        page: 1,
+        limit: 10,
+      },
     };
+  },
+  components: {
+    Pagination,
+    Transfer,
   },
   methods: {
     searchList() {
       console.log(this.manageForm, "来对抗肌肤");
+    },
+    getList() {
+      console.log(this.listQuery, "listQuery");
+    },
+    submit() {
+      console.log(this.transferData, "transferData");
+      this.dialogVisible = false;
+    },
+    getTransferData(val) {
+      this.transferData = val;
     },
   },
 };

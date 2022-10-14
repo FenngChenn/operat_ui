@@ -4,7 +4,7 @@
  * @Author: wangyb
  * @Date: 2022-10-11 11:41:52
  * @LastEditors: wangyb
- * @LastEditTime: 2022-10-13 17:51:42
+ * @LastEditTime: 2022-10-14 09:20:20
 -->
 <template>
   <div class="check-manage">
@@ -117,6 +117,7 @@
           :cell-style="{ textAlign: 'center' }" 
           :header-cell-style="{ textAlign: 'center' }"
           size="mini"
+          empty-text
         >
           <el-table-column v-if="transferData.length > 0" type="selection" width="55"> </el-table-column>
           <template v-for="(item,index) in transferArr">
