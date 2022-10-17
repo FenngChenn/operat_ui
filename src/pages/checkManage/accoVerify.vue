@@ -10,14 +10,18 @@
                     <el-form-item>
                         <el-date-picker
                             v-model="accoManageForm.businessDate"
-                            type="date"
+                            type="daterange"
+                            range-separator="至"
+                            start-placeholder="业务开始日期"
+                            end-placeholder="业务结束日期"
                             value-format="yyyy-MM-dd"
                             size="mini" clearable
-                            placeholder="业务日期">
+                            unlink-panels
+                            :picker-options="pickerOptions">
                         </el-date-picker>
                     </el-form-item>
                     <el-form-item>
-                        <el-select v-model="accoManageForm.dataSource" placeholder="数据来源">
+                        <el-select v-model="accoManageForm.source" placeholder="数据来源">
                             <el-option
                                 :label="item.name"
                                 :value="item.value"
@@ -45,6 +49,7 @@
                                 :label="item.name"
                                 :value="item.value"
                                 v-for="(item, index) in thirdOrderNoArr"
+                                :key="item.value"
                             ></el-option>
                         </el-select>
                     </el-form-item>
@@ -96,7 +101,7 @@
                     <el-table-column v-if="transferData.length > 0" type="selection" width="55"> </el-table-column>
                     <template v-for="(item, code) in tableColumns">
                         <template v-if="transferData.includes(item.code)">
-                            <el-table-column :label="item.label" :key="code" :width="item.width ? item.width : '80px'">
+                            <el-table-column :label="item.label" :key="code" :width="item.width ? item.width : 'auto'">
                                 <template slot-scope="scope">
                                     {{ scope.row[item.code] }}
                                 </template>
@@ -107,17 +112,17 @@
             </div>
             <!-- 操作按钮 -->
             <div class="manage-view">
-                <el-button type="primary" size="mini">业务主体信息核对</el-button>
-                <el-button type="primary" size="mini">财务主体信息核对</el-button>
+                <el-button type="primary" size="mini" @click="toBusiVerify">业务主体信息核对</el-button>
+                <el-button type="primary" size="mini" @click="toFinancialVerify">财务主体信息核对</el-button>
             </div>
             <!-- 分页器 -->
-<!--            <pagination-->
-<!--                v-show="total > 0"-->
-<!--                :total="total"-->
-<!--                :page.sync="listQuery.page"-->
-<!--                :limit.sync="listQuery.limit"-->
-<!--                @pagination="getList"-->
-<!--            />-->
+            <pagination
+                v-show="total > 0"
+                :total="total"
+                :page.sync="listQuery.page"
+                :limit.sync="listQuery.limit"
+                @pagination="getList"
+            />
         </div>
         <!-- 穿梭框弹窗 -->
         <el-dialog
@@ -146,11 +151,13 @@
 <script>
 import {sourceListEnum} from "@/config/operat_enum";
 import Transfer from "@/components/Transfer";
+import Pagination from "@/components/Pagination"
 
 export default {
     name: "PayCheckBatch",
     components: {
-        Transfer
+        Transfer,
+        Pagination
     },
     created: function () {
 
@@ -160,7 +167,7 @@ export default {
             sourceListEnum,
             accoManageForm: {
                 businessDate: "",  //业务日期
-                dataSource: "", //数据来源
+                source: "", //数据来源
                 sysSource: "",  //系统来源
                 thirdOrderNo: "", //第三方订单号
                 orderNo: "", //订单号
@@ -171,70 +178,82 @@ export default {
             thirdOrderNoArr: [],
             tableList: [],
             tableColumns: [
-                {code: 'dataSource', label: '数据来源'},
+                {code: 'source', label: '数据来源'},
                 {code: 'sysCode', label: '出单系统'},
                 {code: 'coreSysCode', label: '核心系统'},
                 {code: 'checkDate', label: '对账日期'},
                 {code: 'tradeDate', label: '交易日期'},
                 {code: 'branchCode', label: '分公司代码', width: '100px'},
                 {code: 'subBranchCode', label: '中支公司代码', width: '120px'},
-                {code: 'thirdOrderNo', label: '第三方支付订单号', width: '180px'},
-                {code: 'fundUsername', label: '资金用户名', width: '100px'},
-                {code: 'thirdSettleOrg', label: '第三方结算机构', width: '120px'},
-                {code: 'insuranceBranchNo', label: '保单归属分公司代码', width: '180px'},
-                {code: 'insuranceSubBranchNo', label: '保单归属中支公司代码', width: '190px'},
+                {code: 'thirdPayOrderNo', label: '第三方支付订单号', width: '180px'},
+                {code: 'mbtsUname', label: '资金用户名', width: '100px'},
+                {code: 'theThrdprt', label: '第三方结算机构', width: '120px'},
+                // {code: 'insuranceBranchNo', label: '保单归属分公司代码', width: '180px'},
+                // {code: 'insuranceSubBranchNo', label: '保单归属中支公司代码', width: '190px'},
                 {code: 'orderNo', label: '订单号'},
-                {code: 'applicationFormNo', label: '投保单号'},
+                {code: 'insuranceNo', label: '投保单号'},
                 {code: 'policyNo', label: '保单号'},
                 {code: 'endorsementNo', label: '批单号'},
+                {key: 'compNo', label: '理赔单号'},
                 {code: 'payMode', label: '支付方式'},
                 {code: 'cpCategory', label: '收付类别'},
                 {code: 'orderAmount', label: '订单金额'},
                 {code: 'customerName', label: '客户姓名'},
                 {code: 'customerNumber', label: '客户证件号码', width: '120px'},
-                {code: 'salesChannel', label: '销售渠道'},
-                {code: 'policyEffectiveDate', label: '保单生效日', width: '100px'},
-                {code: 'remark', label: '备注'},
+                // {code: 'salesChannel', label: '销售渠道'},
+                // {code: 'policyEffectiveDate', label: '保单生效日', width: '100px'},
+                // {code: 'remark', label: '备注'},
                 {code: 'checkState', label: '对账状态'},
-                {code: 'checkTime', label: '对账时间'},
-                {code: 'payableDate', label: '应缴日期'},
+                // {code: 'checkTime', label: '对账时间'},
+                // {code: 'payableDate', label: '应缴日期'},
             ],
-            transferData: ['dataSource','sysCode','coreSysCode','checkDate','tradeDate','branchCode','subBranchCode','thirdOrderNo','fundUsername',
-                'thirdSettleOrg','insuranceBranchNo','insuranceSubBranchNo','orderNo'],
-            // transferArr:['dataSource','sysCode','coreSysCode','checkDate','tradeDate','branchCode','subBranchCode','thirdOrderNo','fundUsername',
+            transferData: ['source','sysCode','checkDate','tradeDate','orderNo','thirdOrderNo','orderAmount','payMode','cpCategory'],
+            // transferArr:['source','sysCode','coreSysCode','checkDate','tradeDate','branchCode','subBranchCode','thirdOrderNo','fundUsername',
             //     'thirdSettleOrg','insuranceBranchNo','insuranceSubBranchNo','orderNo','applicationFormNo','policyNo','endorsementNo','payMode',
             //     'cpCategory','orderAmount','customerName','customerNumber','salesChannel','policyEffectiveDate','remark','checkState','checkDate',
             //     'payableDate'],
             transferArr: [
-                {key: 'dataSource', label: '数据来源'},
+                {key: 'source', label: '数据来源'},
                 {key: 'sysCode', label: '出单系统'},
                 {key: 'coreSysCode', label: '核心系统'},
                 {key: 'checkDate', label: '对账日期'},
                 {key: 'tradeDate', label: '交易日期'},
                 {key: 'branchCode', label: '分公司代码'},
                 {key: 'subBranchCode', label: '中支公司代码'},
-                {key: 'thirdOrderNo', label: '第三方支付订单号'},
-                {key: 'fundUsername', label: '资金用户名'},
-                {key: 'thirdSettleOrg', label: '第三方结算机构'},
-                {key: 'insuranceBranchNo', label: '保单归属分公司代码'},
-                {key: 'insuranceSubBranchNo', label: '保单归属中支公司代码'},
+                {key: 'thirdPayOrderNo', label: '第三方支付订单号'},
+                {key: 'mbtsUname', label: '资金用户名'},
+                {key: 'theThrdprt', label: '第三方结算机构'},
+                // {key: 'insuranceBranchNo', label: '保单归属分公司代码'},
+                // {key: 'insuranceSubBranchNo', label: '保单归属中支公司代码'},
                 {key: 'orderNo', label: '订单号'},
-                {key: 'applicationFormNo', label: '投保单号'},
+                {key: 'insuranceNo', label: '投保单号'},
                 {key: 'policyNo', label: '保单号'},
                 {key: 'endorsementNo', label: '批单号'},
+                {key: 'compNo', label: '理赔单号'},
                 {key: 'payMode', label: '支付方式'},
                 {key: 'cpCategory', label: '收付类别'},
                 {key: 'orderAmount', label: '订单金额'},
                 {key: 'customerName', label: '客户姓名'},
                 {key: 'customerNumber', label: '客户证件号码'},
-                {key: 'salesChannel', label: '销售渠道'},
-                {key: 'policyEffectiveDate', label: '保单生效日'},
-                {key: 'remark', label: '备注'},
+                // {key: 'salesChannel', label: '销售渠道'},
+                // {key: 'policyEffectiveDate', label: '保单生效日'},
+                // {key: 'remark', label: '备注'},
                 {key: 'checkState', label: '对账状态'},
-                {key: 'checkTime', label: '对账时间'},
-                {key: 'payableDate', label: '应缴日期'},
+                // {key: 'checkTime', label: '对账时间'},
+                // {key: 'payableDate', label: '应缴日期'},
             ],
             dialogVisible: false,
+            pickerOptions: {
+                disabledDate(time) {
+                    return time.getTime() > Date.now();
+                }
+            },
+            total: 10,
+            listLoading: true,
+            listQuery: {
+                page: 1,
+                limit: 10,
+            },
         }
     },
     methods: {
@@ -243,6 +262,15 @@ export default {
             this.transferData = val
         },
         submit() {},
+        toBusiVerify() {
+            this.$router.push('/busiVerify')
+        },
+        toFinancialVerify() {
+            this.$router.push('/financialVerify')
+        },
+        getList() {
+            console.log(this.listQuery);
+        },
     },
     computed: {
     },
